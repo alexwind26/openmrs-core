@@ -309,6 +309,25 @@ public class PersonTest extends BaseContextSensitiveTest {
 	}
 	
 	/**
+	 * Test that one cannot set the deathdate before the birthdate
+	 * 
+	 * @throws Exception
+	 */
+	@Test
+	public void shouldNotSetDeathBeforeBirth() throws Exception {
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+		Person p = new Person();
+		
+		Date birthdate = new Date(2000, 10, 26);
+		df.format(birthdate);
+		p.setBirthdate(birthdate);
+		Date deathdate = new Date(1998, 10, 26);
+		df.format(deathdate);
+		p.setDeathDate(deathdate);
+		// this should throw an exception that deathdate cannot be before the birthdate
+	}
+	
+	/**
 	 * @see Person#getAge(Date)
 	 */
 	@Test
