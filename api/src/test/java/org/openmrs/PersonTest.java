@@ -317,14 +317,11 @@ public class PersonTest extends BaseContextSensitiveTest {
 	@Test(expected = APIException.class)
 	@Verifies(value = "should throw APIException if deathdate set before birthdate", method = "setBirthdate(Date)")
 	public void shouldNotSetDeathBeforeBirth() throws Exception {
-		DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		Person p = new Person();
 		
+		Person p = new Person();
 		Date birthdate = new Date(2000, 10, 26);
-		df.format(birthdate);
 		p.setBirthdate(birthdate);
 		Date deathdate = new Date(1998, 10, 26);
-		df.format(deathdate);
 		p.setDeathDate(deathdate);
 	}
 	
