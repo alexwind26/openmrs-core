@@ -327,7 +327,7 @@ public class PersonTest extends BaseContextSensitiveTest {
 		df.format(deathdate);
 		p.setDeathDate(deathdate);
 		// this should throw an exception that deathdate cannot be before the birthdate
-		throw new APIException();
+		
 	}
 	
 	/**
