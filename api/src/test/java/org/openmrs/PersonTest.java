@@ -315,7 +315,7 @@ public class PersonTest extends BaseContextSensitiveTest {
 	 * @throws Exception
 	 */
 	@Test(expected = APIException.class)
-	@Verifies(value = "should throw APIException if deathdate set before birthdate", method = "setBirthdate(Date)")
+	@Verifies(value = "should throw APIException if deathdate set before birthdate", method = "setDeathDate(Date)")
 	public void shouldNotSetDeathBeforeBirth() throws Exception {
 
 		Person p = new Person();
